@@ -1,0 +1,24 @@
+[project]
+name = "agent-project"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Agash", email = "akashsivakumar09@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "dotenv>=0.9.9",
+    "langchain>=1.4.7",
+    "langchain-google-genai>=4.4.2",
+    "langgraph>=1.2.17",
+    "mysql-connector-python>=26.10.0",
+    "pydantic>=2.14.1",
+]
+
+[project.scripts]
+agent-project = "agent_project:main"
+
+[build-system]
+requires = ["uv_build>=0.13.5,<0.14.0"]
+build-backend = "uv_build"
