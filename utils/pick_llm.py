@@ -17,16 +17,16 @@ def pick_llm(level: str):
         llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0)
     elif level.lower() == "medium":
         # Flash can also be used here, or you can step up to Pro for better reasoning
-        llm = ChatGoogleGenerativeAI(model="gemini-2.5-pro", temperature=0)
+        llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0)
     elif level.lower() == "high":
-        llm = ChatGoogleGenerativeAI(model="gemini-2.5-pro", temperature=0)
+        llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0)
     else:
         raise ValueError(f"Unsupported level: {level}")
 
     return llm
 
 if __name__ == "__main__":
-    llm_obj = pick_llm("low")  
+    llm_obj = pick_llm("high")  
     # .invoke() returns an AIMessage object. .content extracts the text string.
     response = llm_obj.invoke("What is the capital of France?")
     print(response.content)
